@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}
+Register
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <form enctype="multipart/form-data" method="post">
+        {{ form.hidden_tag() }}
+        <div class="title">
+            <h1>Register</h1>
+            <p class="registerp">Welcome! New here?</p>
+            <hr>
+        </div>
+        <div class="mb-3">
+            {{ form.profile_img.label(class="form-label") }}
+            {{ form.profile_img(accept=".jpg,.png", class="form-control") }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control", placeholder=form.email.label.text) }}
+        </div>
+        <div class="mb-3">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control", placeholder="Username") }}
+        </div>
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", placeholder="Password")}}
+        </div>
+        <div class="mb-3">
+            {{ form.repeat_password.label(class="form-label") }}
+            {{ form.repeat_password(class="form-control", placeholder="Password")}}
+        </div>
+        {% if form.errors.values() %}
+        <div class="alertserror">
+            {% for errors in form.errors.values()%}
+                {% for error in errors%}
+                    {{ error }}<br>
+                {% endfor %}
+            {% endfor%}
+        </div>
+        {% endif %}
+        <span>Already have an account? <a href="/login">Login</a></span>
+        {{form.submit(class="btn btn-primary loginbtn")}}
+    </form>
+</div>
+{% endblock %}

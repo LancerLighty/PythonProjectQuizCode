@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="namelogo">
+            <div id="logo123">
+                <img src="./static/images/astronout.png" alt="">
+            </div>
+            <a class="navbar-brand" href="/">QuizCode</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/quizzes">Quizzes</a>
+                </li>
+            </ul>
+            {% if current_user.is_authenticated %}
+            <div class="profile_navbar">
+                <div class="profile_username">{{ current_user.username }}</div>
+                <div class="profile_img"
+                     style="background-image:url(../static/images/{{ current_user.profile_img }}"></div>
+                <div class="profile_navbar_setting_hover">
+                    <div class="profile_navbar_setting">
+                        <a href="/myscore">
+                            <button class="btn max-width-bth">My Scores</button>
+                        </a>
+                        <a href="/profile_settings">
+                            <button class="btn max-width-bth">settings</button>
+                        </a>
+                        <hr>
+                        <a href="/logout">
+                            <button class="btn max-width-bth">logout</button>
+                        </a>
+                        <a href="/delete_account">
+                            <button class=" btn btn-danger max-width-bth">Delete Account</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {% else %}
+            <a href="/register">
+                <button class="btn btn-primary">register</button>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</nav>

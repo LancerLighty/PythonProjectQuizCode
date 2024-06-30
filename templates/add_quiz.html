@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+Add-quiz
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="title">
+            <h1>NewQuizz</h1>
+            <hr>
+        </div>
+        <div class="mb-3">
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control", placeholder=form.name.label.text) }}
+        </div>
+
+        {% for errors in form.errors.values()%}
+        <div class="alerts alerts-danger">
+            {% for error in errors%}
+            {{ error }}<br>
+            {% endfor %}
+        </div>
+        {% endfor%}
+        {{form.submit(class="btn btn-primary loginbtn")}}
+    </form>
+</div>
+{% endblock %}

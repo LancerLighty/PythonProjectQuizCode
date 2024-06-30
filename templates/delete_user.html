@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+Delete Account
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <div class="delete_account_background">
+        <h1 style="text-align:center; color: rgb(143, 26, 26)">Enter Password To Delete Account</h1>
+        <hr>
+        <form method="post">
+            {{ delete_account.hidden_tag() }}
+            <div class="mb-3">
+                {{ delete_account.password.label(class="form-label") }}
+                {{ delete_account.password(class="form-control", placeholder="Password")}}
+            </div>
+                  <div class="alertserror">
+                      passwords don't match
+                  </div>
+            {{delete_account.submit(class="btn btn-danger")}}
+        </form>
+    </div>
+</div>
+{% endblock%}

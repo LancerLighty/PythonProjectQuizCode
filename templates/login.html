@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+Login
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="title">
+            <h1>Login</h1>
+            <hr>
+        </div>
+        <div class="mb-3">
+            {{ form.username_email.label(class="form-label") }}
+            {{ form.username_email(class="form-control", placeholder=form.username_email.label.text) }}
+        </div>
+        <div class="mb-3">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control", placeholder="Password")}}
+        </div>
+        <span>Don't have an account? <a href="/register">Register</a></span>
+        {{form.submit(class="btn btn-primary loginbtn")}}
+    </form>
+</div>
+{% endblock %}

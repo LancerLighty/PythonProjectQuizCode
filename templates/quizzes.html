@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}
+quizzes
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <div class="coll">
+        {% for quiz in quizzes %}
+        <a href="/quizzes/{{ quiz['id'] }}/0/0">
+            <div class="cardd">
+                <h1>{{ quiz['name'] }}</h1>
+                {% if current_user.role == "Admin" %}
+                <a href="/quizzes/edit_quiz/{{quiz['id']}}">
+                    <button>Edit</button>
+                </a>
+                <a href="/quizzes/edit_questions/{{quiz['id']}}">
+                    <button style="width:150px">Questions</button>
+                </a>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+
+        {% if current_user.role == "Admin" %}
+        <a style="self-align:flex-end" href="/quizzes/add_quiz">
+            <button>Add</button>
+        </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

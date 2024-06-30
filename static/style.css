@@ -1,0 +1,326 @@
+
+#logo{
+    font-size: 50px !important;
+    text-align: center;
+    width: 200px;
+    align-items: center;
+}
+.logopos{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 120px;
+}
+h6{
+    font-size: 50px !important;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 800;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(0, 170, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.SignUp{
+    background-color: rgb(255, 255, 255);
+    color: rgb(71, 135, 255);
+}
+.Login{
+    background-color: rgb(0, 170, 255);
+    color: white;
+}
+button{
+    border: none;
+    padding: 7px 13px;
+    width:100px;
+    border-radius: 5px;
+    font-size: 20px;
+    margin: 5px;
+    font-weight: 600;
+}
+.paragraph{
+    justify-self: flex-start;
+    width: 100%;
+    text-align: center;
+}
+h5{
+    font-size: 30px;
+}
+body{
+    background-image: url(./images/peakpx1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding-bottom: 100px
+}
+@media screen and (max-width:995px) {
+    .navbar-brand{
+        justify-self: start !important;
+    }
+}
+@media screen and (max-width:800px) {
+    h5{
+        font-size: 32px;
+    }
+    button{
+        padding: 7px 10px;
+        width:auto;
+        font-size: 25px;
+    }
+}
+
+
+
+
+.containeracc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 100px;
+}
+form{
+    margin-top:  60px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.813);
+    padding: 30px 20px 50px;
+    padding-bottom: 70px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+hr{
+    width:  100%;
+    padding-top:  10px;
+}
+.title h1{
+    padding-top:  20px;
+}
+input{
+    width: 400px !important;
+}
+.registerp{
+    width: 100%;
+    text-align:  center;
+}
+.loginbtn{
+    width:  100% !important;
+    margin-top: 10px;
+}
+.cardd{
+    background-color: white;
+    display: flex;
+    margin: 0px 0px 20px 0px;
+    width: 700px;
+    text-align:center;
+    min-width: 50%;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 70px;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+}
+.cardd h1{
+    font-size: 20px;
+    margin: 0px;
+}
+.cardd p{
+margin: 0px;
+}
+.coll{
+    background-color: rgba(255, 255, 255, 0.813);
+    border-radius: 5px;
+    margin-top: 100px;
+    padding: 30px;
+}
+.coll a{
+  text-decoration: none;
+}
+.questions_card{
+    background-color:rgba(255, 255, 255, 0.85);
+    width: 100%;
+    margin: 10px 50px;
+    padding: 30px;
+    border-radius: 10px
+}
+.profile_username{
+    font-size: 10px;
+}
+.profile_picture{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.alertserror{
+    background-color: rgba(255, 0, 0, 0.2);
+    border-style: solid;
+    border-color: rgba(255, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgba(154, 0, 0, 0.83);
+    font-size: 13px;
+}.profile_navbar {
+    display: flex;
+}
+
+.profile_username {
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(49, 72, 145);
+    margin-right: 5px;
+}
+
+.profile_img {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.profile_navbar_setting {
+
+    margin-top: 30px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.587);
+    width: 170px;
+    border-radius:3px;
+}
+.profile_navbar{
+    cursor: pointer;
+}
+.profile_navbar_setting_hover{
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s;
+    margin-top: 20px;
+    margin-left: -50px
+}
+.profile_navbar:hover .profile_navbar_setting_hover {
+    opacity: 1;
+}
+.max-width-bth{
+    width: 100% !important;
+    margin: 0px !important;
+    background-color: none;
+    border-radius: 0px !important;
+}
+.max-width-bth:hover{
+    background-color: rgb(233, 238, 247)
+}
+.profile_navbar_setting hr{
+    padding: 0px;
+    margin: 0px
+}
+.profile_picture_edit{
+    background-position: center center;
+    background-repeat: no-repeat;
+        background-size: cover;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    display:flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 20px
+}
+.profile_picture_edit_btn{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+        height: 100px;
+    width: 40px;
+    height: 40px !important;
+    border-radius: 50%;
+    cursor:pointer;
+}
+.profile_edit_form{
+    width: 90%;
+    min-width: 400px;
+}
+.profile_edit_form label{
+    margin-top: 10px;
+    margin-bottom: -10px !important
+}
+.edit_save_buttons{
+    margin-top: 30px
+}
+
+.question {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+.answers input[type="radio"] {
+    margin-right: 10px;
+    width: auto !important;
+}
+.quiz-container{
+    width: 800px;
+    min-width: 400px;
+}
+.quiz-container form{
+    background-color: rgba(255, 255, 255, 0) !important;
+    margin: 0px !important;
+    padding-left: 0px !important;
+}
+.quiz-container{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px 50px 0px 50px;
+    border-radius: 8px
+}
+.answers .subfield{
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 7px;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+    border-radius: 7px;
+}
+.Score_background{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 50px 0px 50px;
+    width: 800px;
+    min-width: 400px;
+    border-radius: 7px
+}
+.score_card{
+    display:flex;
+    width: 100%;
+    justify-content:space-around;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 7px;
+    margin-bottom: 5px;
+    padding: 5px
+}
+.score_cards{
+    padding: 0px 50px;
+    width:100%
+}
+.score_card p{
+    margin: 0px;
+    font-size: 19px;
+}
+.delete_account_background{
+    background-color: rgba(255, 255, 255, 0.85);
+    width: 800px;
+    min-width: 400px;
+    padding-top: 30px
+}
+.delete_account_background form{
+    background-color: rgba(255, 255, 255, 0) !important;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}
+home page
+{% endblock %}
+{% block container %}
+<div class="welcomeimg">
+    <div class="image">
+        <div class="logopos">
+            <img src="./static/images/astronout.png" alt="">
+            <h6>QuizCode</h6>
+        </div>
+        <h5 class="paragraph">test your knowledge in coding!</h5>
+        {% if not current_user.is_authenticated %}
+        <div class="buttons">
+            <a href="/register">
+                <button class="SignUp">Sign Up</button>
+            </a>
+            <a href="/login">
+                <button class="Login">Login</button>
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+<div class="container">
+    <div class="center">
+        <div class="background">
+            <h3>Welcome to QuizCode: Sharpen Your Coding Skills!</h3>
+            <hr>
+            <div class="padding">
+                <p>Are you ready to embark on an exciting journey of code exploration and challenge your programming
+                    prowess? Look no further than QuizCode, your one-stop destination for honing your coding skills
+                    through a series of stimulating quizzes.</p>
+                <p>At QuizCode, we offer a comprehensive collection of meticulously crafted quizzes designed to test
+                    your knowledge across various programming languages, algorithms, data structures, and software
+                    development concepts. Each quiz is thoughtfully designed to challenge your problem-solving
+                    abilities, helping you to strengthen your understanding and become a more proficient coder.</p>
+                <p>Whether you are a beginner looking to solidify your foundations or an experienced developer seeking
+                    to push the boundaries of your expertise, QuizCode has quizzes tailored for every skill level.
+                    Choose from an array of engaging topics and dive into captivating questions that will put your
+                    coding aptitude to the test.</p>
+                <p>Our user-friendly platform ensures seamless navigation, allowing you to effortlessly explore our
+                    extensive quiz library. You can select quizzes based on your interests, track your progress, and
+                    even compete with fellow enthusiasts through our leaderboard system. Prepare to immerse yourself in
+                    an interactive learning experience that will propel your coding journey to new heights.</p>
+                <p>Join the vibrant community of aspiring coders and seasoned professionals at QuizCode today. Let our
+                    quizzes ignite your passion for coding, expand your knowledge, and empower you to excel in the
+                    ever-evolving world of technology.</p>
+                <p>Unleash your coding potential. Dive into our quizzes. Elevate your skills. Welcome to QuizCode!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

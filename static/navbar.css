@@ -1,0 +1,50 @@
+#logo123 img{
+    height: 45px;
+}
+.namelogo{
+    display: flex;
+}
+.navbar{
+    background-color: rgba(255, 255, 255, 0.587) !important;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 10px 5px rgba(77, 45, 255, 0.463);
+    position: fixed;
+    width: 100%;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.welcomeimg{
+    width: 100%
+}
+.background{
+    background-color: rgba(255, 255, 255, 0.921);
+    max-width: 800px;
+    border-radius: 5px;
+}
+.padding{
+    padding: 20px;
+    padding-bottom: 40px;
+}
+h3{
+    margin: 40px 20px;
+}
+.image{
+    /* background-image: url("../../assets/background.jpg"); */
+    background-color: rgba(0, 0, 0, 0.363);
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: cover;
+    color: white;
+    height: calc(100vh - 63px);
+    width: 100%;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

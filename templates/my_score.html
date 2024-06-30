@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block css %}
+{% endblock %}
+{% block title %}
+My Score
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <div class="Score_background">
+        <h1 style="text-align: center; padding-bottom: 30px">My Scores:</h1>
+        <hr>
+        <div class="score_cards">
+            {% if not no_scores%}
+            <div class="score_card"  >
+                <p style="font-size: 25px !important; font-weight: 700;">Quiz:</p>
+                <p style="font-size: 25px !important; font-weight: 700;">Score:</p>
+            </div>
+            {% endif %}
+            {% for score in scores %}
+            <div class="score_card">
+                <p>{{score.quiz_name}}</p>
+                <p>{{score.score}}/{{ score.max_score}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% if no_scores %}
+        <p>You don't have any scores yet!</p>
+        <a href="/quizzes">
+            <button style="width:150px" class="btn btn-primary">Try Quizzes</button>
+        </a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

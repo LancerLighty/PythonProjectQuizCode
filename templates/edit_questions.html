@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}
+edit-questions
+{% endblock %}
+{% block container %}
+<div class="containeracc" style="flex-wrap:wrap">
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <div class="title">
+            <h1>{{quiz}}</h1>
+            <hr>
+        </div>
+        <div class="mb-3">
+            {{ form.question.label(class="form-label") }}
+            {{ form.question(class="form-control", placeholder=form.question.label.text) }}
+        </div>
+        <div class="mb-3">
+            {{ form.correct_answer.label(class="form-label") }}
+            {{ form.correct_answer(class="form-control", placeholder="Correct answer") }}
+        </div>
+        <div class="mb-3">
+            {{ form.wrong_answer_one.label(class="form-label") }}
+            {{ form.wrong_answer_one(class="form-control", placeholder="Wrong answer")}}
+        </div>
+        <div class="mb-3">
+            {{ form.wrong_answer_two.label(class="form-label") }}
+            {{ form.wrong_answer_two(class="form-control", placeholder="Wrong answer")}}
+        </div>
+        <div class="mb-3">
+            {{ form.wrong_answer_three.label(class="form-label") }}
+            {{ form.wrong_answer_three(class="form-control", placeholder="Wrong answer")}}
+        </div>
+        {% for errors in form.errors.values()%}
+        <div class="alerts alerts-danger">
+            {% for error in errors%}
+            {{ error }}<br>
+            {% endfor %}
+        </div>
+        {% endfor%}
+        {{form.submit(class="btn btn-primary loginbtn")}}
+    </form>
+    {% for question in questions%}
+    <div class="questions_card">
+        <h1>Question: {{question.question}}</h1>
+        <p>Correct answer: {{question.correct_answer}}</p>
+        <p>Wrong answers: {{question.wrong_answer_one }}, {{question.wrong_answer_two }}, {{question.wrong_answer_three }}</p>
+        <a href="/quizzes/delete_questions/{{question.id}}">
+        <button  class="btn btn-danger">Delete</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

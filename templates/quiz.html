@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block css %}
+{% endblock %}
+{% block title %}
+{{ quiz['name'] }} - Quiz
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <div class="quiz-container">
+        {% if quiz_not_finished %}
+        <p>questions:{{ index + 1}}/{{ qustions_count }}</p>
+        <div class="question">
+            {{ questions[index].question }}
+        </div>
+        <form class="answers" method="POST">
+
+            {{ form.hidden_tag() }}
+            {% for subfield in form.answer %}
+            <label class="subfield">
+                {{ subfield }}
+                {{ subfield.label }}
+            </label>
+            {% endfor %}
+                        {% if form.errors.values() %}
+            <div class="alertserror">
+                <p>choose an answer</p>
+            </div>
+            {% endif %}
+            {{form.submit(class="btn btn-primary", style="width: 70px !important")}}
+        </form>
+        {% else %}
+        <div class="question">Quiz Completed! you scored: {{score}}</div>
+        {% if you_need_to_log_in%}
+        <p>your score not saved because you aren't logged in.</p>
+        {% endif %}
+        {% if new_score_added%}
+        <p>your new quiz score has successfully added.</p>
+        {% endif %}
+        {% if old_score_updated%}
+        <p>your new score has successfully added.</p>
+        {% endif %}
+        <button class="btn btn-primary" style="width:150px; margin-bottom: 50px">other quizzes</button>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+{% block script %}
+
+{% endblock%}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}
+Add-quiz
+{% endblock %}
+{% block container %}
+<div class="containeracc">
+    <form enctype="multipart/form-data" method="post" class="profile_edit_form">
+        {{ form.hidden_tag() }}
+        <div class="profile_picture_edit" style="background-image:url(./static/images/{{ form.profile_img.data }})">
+
+        </div>
+        <div class="mb-3">
+            {{ form.profile_img.label(class="form-label") }}
+            {{ form.profile_img(accept=".jpg,.png", class="form-control") }}
+        </div>
+        {{ form.username.label(class="form-label") }}
+        {{ form.username(class="form-control", id="username_edit", placeholder="Username", readonly="readonly") }}
+        {{ form.email.label(class="form-label") }}
+        {{ form.email(class="form-control", placeholder="Email", readonly="readonly") }}
+        {% if form.errors.values() %}
+        <div class="alertserror">
+            {% for errors in form.errors.values()%}
+            {% for error in errors%}
+            {{ error }}<br>
+            {% endfor %}
+            {% endfor%}
+        </div>
+        {% endif %}
+        <div class="edit_save_buttons">
+            <div onclick="makeEditable()" class="edit_button btn btn-primary">Edit</div>
+            {{form.submit(class="btn btn-success", style="width:60px !important")}}
+        </div>
+    </form>
+</div>
+<script src="../static/Profile_edit.js"></script>
+{% endblock %}

@@ -75,7 +75,7 @@ class QuestionForm(FlaskForm):
 
 class LoginForm(FlaskForm):
     username_email = StringField("Enter your Username or Email:", validators=[DataRequired()])
-    password = StringField("Enter password:", validators=[DataRequired()])
+    password = PasswordField("Enter password:", validators=[DataRequired()])
     submit = SubmitField("Login")
 
 
